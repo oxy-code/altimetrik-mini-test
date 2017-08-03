@@ -1,0 +1,13 @@
+{
+  "name": "AltiMetrik_Mini_Test_By_Vel",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Vel <velmurugaaan@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
