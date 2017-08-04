@@ -15,7 +15,12 @@ const app = express();
 // setup database
 db.connect();
 
-// Parse only application/json
+// Parse when Content-Type: application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
+
+// Parse when Content-Type: application/json
 app.use(bodyParser.json());
 
 // setup routes
@@ -25,7 +30,7 @@ routes(app);
 // if the error occurred coz
 // error handling will be in log file
 process.on('uncaughtException', function (err) {
-  console.error(err);
+  console.error(err); // for just printing in the console
   console.log("Application still running...");
 });
 

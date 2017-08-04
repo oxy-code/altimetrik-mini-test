@@ -32,11 +32,20 @@ DB.prototype.query = function(sql, cb){
 	this.conn.query(sql, cb);
 }
 
+DB.prototype.esc = function(param){
+	return this.conn.escape(param);
+}
+
 
 // DB connection error handler
 function errHandler(err){
 	if (err){
-		console.log(`DB ERROR [${err.code}]: ${err.sqlMessage}`)
+		if (err.code === 'ECONNREFUSED'){
+			console.log(`DB ERROR[${err.code}]: MySQL service is not turned on!`);
+		}
+		else{
+			console.log(`DB ERROR [${err.code}]: ${err.sqlMessage}!`)
+		}
 		process.exit();
 	}
 	else{
@@ -46,5 +55,5 @@ function errHandler(err){
 
 // Singleton design pattern
 // to keep same instance for multiple calls
-module.exports = exports = new DB();
+module.exports = new DB();
 

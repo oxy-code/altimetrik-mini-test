@@ -1,0 +1,61 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AltiMetrik",
+		"_postman_id": "8cdbca5f-9da2-87f0-188a-a24cbbc7b95c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RetriveToken",
+			"request": {
+				"url": "http://localhost:8080/api/token",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/users",
+			"request": {
+				"url": "http://localhost:8080/api/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Vel",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "velmurugaaan@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "tvt7777",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

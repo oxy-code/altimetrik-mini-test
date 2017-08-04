@@ -3,12 +3,13 @@ const controller = require('./controller');
 
 function routes(app){
 
-	app.post('/users', controller.saveUser);
+	app.get('/api/token', controller.generateToken);
+	app.post('/api/users', controller.saveUser);
 	app.get('/', controller.index);
 
 	app.use(function (err, req, res, next) {
-		console.error(err.stack)
-		res.status(500).send('Something broken!')
+		console.error(err.stack);
+		res.status(500).send('<h1 align="center">Something broken!</h1>')
 	})
 
 }
